@@ -10,9 +10,9 @@ func main() {
 	const filepathRoot = "."
 
 	mux := http.NewServeMux()
-	fs := http.FileServer(http.Dir(filepathRoot))
 
-	mux.Handle("/", fs)
+	mux.Handle("/", http.FileServer(http.Dir(filepathRoot)))
+	mux.Handle("/assets", http.FileServer(http.Dir("./assets")))
 
 	srv := &http.Server{
 		Addr:    ":" + port,
