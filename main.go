@@ -12,7 +12,6 @@ func main() {
 	mux := http.NewServeMux()
 
 	mux.Handle("/", http.FileServer(http.Dir(filepathRoot)))
-	mux.Handle("/assets", http.FileServer(http.Dir("./assets")))
 
 	srv := &http.Server{
 		Addr:    ":" + port,
