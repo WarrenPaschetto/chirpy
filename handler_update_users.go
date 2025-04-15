@@ -8,7 +8,7 @@ import (
 	"github.com/WarrenPaschetto/chirpy/internal/database"
 )
 
-func (cfg *apiConfig) handlerUserUpdate(w http.ResponseWriter, r *http.Request) {
+func (cfg *apiConfig) handlerUsersUpdate(w http.ResponseWriter, r *http.Request) {
 	type parameters struct {
 		Password string `json:"password"`
 		Email    string `json:"email"`
